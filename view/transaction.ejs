@@ -1,0 +1,96 @@
+<%-include("header")%>
+<!-- navbar -->
+
+<div class="row nav-container">
+  <nav class="navbar w-100 navbar-expand-lg">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span
+        class="navbar-toggler-icon d-flex align-items-center justify-content-center"
+      >
+        <i class="fa fa-navicon"></i
+      ></span>
+    </button>
+    <a class="navbar-brand" href="/">Sparks Bank</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="ml-3 nav-item">
+          <a class="nav-link" href="/history">Transaction history</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- navbar ends here -->
+<h1 class="text-center mx-auto my-3">Transaction Page</h1>
+<form
+  method="POST"
+  action="/customers/<%= user._id%>/transfer"
+  class="row form mx-auto my-5 p-4 d-flex flex-column"
+>
+  <%info.forEach(info=>{%>
+  <div class="row mx-auto">
+    <div class="alert alert-success text-center"><%= info%></div>
+  </div>
+  <%})%> <%errors.forEach(err=>{%>
+  <div class="row mx-auto">
+    <div class="alert alert-danger text-center"><%= err%></div>
+  </div>
+  <%})%>
+  <div class="row my-3">
+    <div class="col my-auto text-center">Sender name</div>
+    <div class="col">
+      <input
+        type="text"
+        name="senderName"
+        class="form-control"
+        value="<%=user.name%>"
+        disabled
+        required
+      />
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col my-auto text-center">Sender Id</div>
+    <div class="col">
+      <input
+        type="text"
+        name="senderId"
+        class="form-control"
+        value="<%=user._id%>"
+        disabled
+        required
+      />
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col my-auto text-center">Reciever Email</div>
+    <div class="col">
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="eg. hari@gmail.com"
+        required
+      />
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col my-auto text-center">Enter amount</div>
+    <div class="col">
+      <input type="text" name="amount" class="form-control" required />
+    </div>
+  </div>
+  <div class="row mx-auto my-5">
+    <button class="btn">Transfer</button>
+  </div>
+</form>
+<%-include("footer")%>

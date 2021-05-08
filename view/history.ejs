@@ -1,0 +1,57 @@
+<%-include("header")%>
+<!-- navbar -->
+<div class="row nav-container">
+  <nav class="navbar w-100 navbar-expand-lg">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span
+        class="navbar-toggler-icon d-flex align-items-center justify-content-center"
+      >
+        <i class="fa fa-navicon"></i
+      ></span>
+    </button>
+    <a class="navbar-brand" href="/">Sparks Bank</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="ml-3 nav-item">
+          <a class="nav-link" href="/customers">View customers</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- navbar ends here -->
+<h1 class="text-center mx-auto my-3">Transaction Table</h1>
+<!-- Table -->
+<div class="row p-2 p-lg-5">
+  <table id="table" class="table table-hover my-3 mx-auto col-9">
+    <thead>
+      <tr>
+        <th scope="col">Sender Name</th>
+        <th scope="col">Reciever Name</th>
+        <th scope="col">Amount Transferred</th>
+        <th scope="col">Transferred At</th>
+      </tr>
+    </thead>
+    <%docs.forEach(doc=>{%>
+    <tbody>
+      <tr>
+        <td scope="row"><%=doc.sender%></td>
+        <td><%=doc.receiver%></td>
+        <td><%=doc.amount%></td>
+        <td><%=doc.transferredAt.toString().split("GMT")[0]%></td>
+      </tr>
+    </tbody>
+    <%})%>
+  </table>
+</div>
+<!-- Table ends here -->
+<%-include("footer")%>

@@ -1,0 +1,127 @@
+<%-include("header")%>
+<div class="row nav-container">
+  <nav class="navbar w-100 navbar-expand-lg">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span
+        class="navbar-toggler-icon d-flex align-items-center justify-content-center"
+      >
+        <i class="fa fa-navicon"></i
+      ></span>
+    </button>
+    <a class="navbar-brand" href="/">Sparks Bank</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="ml-3 nav-item">
+          <a class="nav-link" href="/history">Transaction history</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="row my-3 mx-auto">
+  <h1 class="col text-center mx-auto">All Users</h1>
+</div>
+<div class="row">
+  <% users.forEach(user=>{ %>
+  <div
+    class="row mx-4 mx-md-4 mx-lg-auto my-3 d-flex flex-row justify-space-between card p-3"
+  >
+    <div class="col-12 col-lg-7 p-3 my-auto font-weight-bold">
+      <%=user.name%>
+    </div>
+    <div
+      class="col-8 col-md-4 col-lg-4 ml-auto d-flex p-0 p-lg-1 flex-row justify-content-end align-items-center"
+    >
+      <div class="col mr-1 text-right mr-lg-0">
+        <button
+          type="button"
+          class="btn"
+          data-toggle="modal"
+          data-target="#exampleModal<%= user._id%>"
+        >
+          Details
+        </button>
+      </div>
+      <div class="col mr-0 text-right">
+        <a href="/customers/<%=user._id%>/transfer" class="btn"
+          >Transfer money</a
+        >
+      </div>
+      <!-- Code for modal -->
+      <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal<%= user._id%>"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5
+                class="modal-title"
+                style="color: #304771; font-weight: 800"
+                id="exampleModalLabel"
+              >
+                User details
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body" style="color: #304771; font-weight: 600">
+              <div class="row">
+                <div class="col">Name:</div>
+                <div class="col"><%= user.name%></div>
+              </div>
+              <div class="row">
+                <div class="col">Account Id:</div>
+                <div class="col"><%= user._id%></div>
+              </div>
+              <div class="row">
+                <div class="col">Email:</div>
+                <div class="col"><%= user.email%></div>
+              </div>
+              <div class="row">
+                <div class="col">Account balance:</div>
+                <div class="col"><%= user.balance%></div>
+              </div>
+            </div>
+            <!--modal body ends here -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal code ends here -->
+    </div>
+  </div>
+  <% }) %>
+</div>
+<%-include("footer")%>

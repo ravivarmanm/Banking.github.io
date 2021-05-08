@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="http://fonts.cdnfonts.com/css/averta-standard"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Basic Banking System</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- navbar -->
+      <div class="row nav-container">
+        <nav class="navbar w-100 navbar-expand-lg">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              class="navbar-toggler-icon d-flex align-items-center justify-content-center"
+            >
+              <i class="fa fa-navicon"></i
+            ></span>
+          </button>
+          <a class="navbar-brand" href="/">Sparks Bank</a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="ml-lg-3 nav-item">
+                <a class="nav-link" href="/history">Transaction history</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- navbar ends here -->
+      <h1 class="text-center mx-auto my-3">Transaction Page</h1>
+      <form class="row form mx-auto my-5 d-flex flex-column">
+        <div class="row my-3">
+          <div class="col my-auto">Sender name</div>
+          <div class="col">
+            <input
+              type="text"
+              name="senderName"
+              class="form-control"
+              value="Harish"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col my-auto">Sender Id</div>
+          <div class="col">
+            <input
+              type="text"
+              name="senderId"
+              class="form-control"
+              value="5b45732he72rh23r"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col my-auto">Reciever Email</div>
+          <div class="col">
+            <input
+              type="email"
+              name="recieverEmail"
+              class="form-control"
+              value="niyaz@gmail.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col my-auto">Enter amount</div>
+          <div class="col">
+            <input type="text" name="amount" class="form-control" required />
+          </div>
+        </div>
+        <div class="row mx-auto my-5">
+          <button class="btn">Transfer</button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
