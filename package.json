@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Dev Harish",
+  "author": "Dev Ravi",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
